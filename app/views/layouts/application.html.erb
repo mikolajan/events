@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Bbq</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="navbar navbar-light bg-light">
+  <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
 
-  <body>
-    <%= yield %>
+  <div class="form-inline">
+    <%= link_to "Зарегистрироваться", "/path1", class: "nav-link" %>
+    <%= link_to "Войти", "/path2", class: "nav-link" %>
+  </div>
+</header>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%#= bootstrap_flash %>
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3>Sidebar</h3>
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2016</p>
+      </footer>
+
+    </div> <!-- /container -->
   </body>
 </html>
