@@ -14,9 +14,28 @@
 <header class="navbar navbar-light bg-light">
   <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
 
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Профиль', current_user %></li>
+        <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Войти', new_user_session_path %></li>
+        <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+<!-- сделать красивую форму регистрации!! -->
   <div class="form-inline">
-    <%= link_to "Зарегистрироваться", "/path1", class: "nav-link" %>
-    <%= link_to "Войти", "/path2", class: "nav-link" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Профиль', current_user %>
+        <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Войти', new_user_session_path %>
+        <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+      <% end %>
+    <%#= link_to "Зарегистрироваться", "/path1", class: "nav-link" %>
+    <%#= link_to "Войти", "/path2", class: "nav-link" %>
   </div>
 </header>
 

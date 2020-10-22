@@ -1,14 +1,18 @@
-require 'openssl'
-
 class User < ApplicationRecord
-  DIGEST = OpenSSL::Digest::SHA256.new
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   has_many :events
 
   validates :name, presence: true, length: {maximum: 35}
 
-  validates :email, presence: true,
-                    uniqueness: true,
-                    format: { with: URI::MailTo::EMAIL_REGEXP }
+  before_validation :set_name, on: :create
 
+  private
+
+  def set_name
+    self.name = "Пока нет имени" if self.name.blank?
+  end
 end
