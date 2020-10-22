@@ -4,65 +4,43 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Events" %></title>
 
   <%= stylesheet_pack_tag 'application', media: 'all' %>
   <%= javascript_pack_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navbar navbar-light bg-light">
-  <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
-
-  <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <ul class="nav navbar-nav">
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to "Events", root_path, class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse navbar-nav justify-content-end">
       <% if user_signed_in? %>
-        <li><%= link_to 'Профиль', current_user %></li>
-        <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+        <%= link_to 'Профиль', current_user, class: "nav-link" %>
+        <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "nav-link" %>
       <% else %>
-        <li><%= link_to 'Войти', new_user_session_path %></li>
-        <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+        <%= link_to 'Войти', new_user_session_path, class: "nav-link" %>
+        <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "nav-link" %>
       <% end %>
-    </ul>
-  </div>
-<!-- сделать красивую форму регистрации!! -->
-  <div class="form-inline">
-      <% if user_signed_in? %>
-        <%= link_to 'Профиль', current_user %>
-        <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-      <% else %>
-        <%= link_to 'Войти', new_user_session_path %>
-        <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-      <% end %>
-    <%#= link_to "Зарегистрироваться", "/path1", class: "nav-link" %>
-    <%#= link_to "Войти", "/path2", class: "nav-link" %>
+    </div>
   </div>
 </header>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+      <%#= bootstrap_flash %>
+      <%= yield %>
+    </div>
+    <div class="col-lg-3">
+    </div>
+  </div>
+</div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%#= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
-
-    </div> <!-- /container -->
-  </body>
+<footer class="footer mt-3 py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">&copy; Nikolay Zhurilo with GoodProgrammer 2020</span>
+  </div>
+</footer>
+</body>
 </html>
