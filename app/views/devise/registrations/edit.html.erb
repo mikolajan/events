@@ -1,45 +1,56 @@
-<h2 class="mt-3">Изменить пароль</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <div>
+  <div>
     <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 
-  <div class="form-group mt-3">
-    <%= f.label :email, 'Введите электронную почту' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 400px" %>
+  <h2 class="mt-3">Изменить пароль</h2>
+
+  <div class="form-group input-group mt-3">
+    <div class="input-group-prepend">
+      <svg width="2.3em" height="2.3em" viewBox="0 0 16 16" class="bi bi-at" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+      </svg>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите электронную почту", class: 'form-control', style: "width: 400px" %>
+    </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="form-group mt-3">
-    <%= f.label :current_password, 'Введите текущий пароль' %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", style: "width: 400px" %>
+  <div class="form-group input-group mt-3">
+    <div class="input-group-prepend">
+      <svg width="2.3em" height="2.3em" viewBox="0 0 16 16" class="bi bi-key" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+  <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+      <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Введите текущий пароль", class: 'form-control', style: "width: 400px" %>
+    </div>
   </div>
 
-  <div class="form-group mt-3">
-    <%= f.label :password, 'Введите новый пароль' %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", style: "width: 400px" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="form-group input-group mt-3">
+    <div class="input-group-prepend">
+      <svg width="2.3em" height="2.3em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      </svg>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Введите новый пароль", class: 'form-control', style: "width: 400px" %>
+    </div>
   </div>
 
-  <div class="form-group mt-3">
-    <%= f.label :password_confirmation, 'Подтвердите новый пароль' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", style: "width: 400px" %>
+    <div class="form-group input-group mt-3">
+    <div class="input-group-prepend">
+      <svg width="2.3em" height="2.3em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      </svg>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Подтвердите новый пароль", class: 'form-control', style: "width: 400px" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Обновить", class: 'btn btn-success' %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<div class="mt-3">
+  <%= link_to "Не изменять пароль", :back %>
+</div>
