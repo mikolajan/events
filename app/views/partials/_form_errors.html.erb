@@ -2,8 +2,8 @@
 
 <% if errors.any? %>
   <div class="alert alert-danger">
-    <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
+    <div class="lead mb-2">
+      В вашей форме <%= I18n.t "errors", count: errors.count %>
     </div>
 
     <ul>

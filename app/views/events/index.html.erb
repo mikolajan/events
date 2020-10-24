@@ -1,9 +1,9 @@
 <h1>События</h1>
 
-<div class="buffer-both">
-  <%= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
+<div class="my-2 py-md-3">
+  <%= link_to 'Создать событие', new_event_path, class: "btn btn-success" %>
 </div>
 
-<div class="row buffer-bottom">
+<div class="row py-2 my-4">
   <%= render partial: 'events/event', collection: @events %>
 </div>
