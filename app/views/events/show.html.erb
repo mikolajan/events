@@ -17,6 +17,11 @@
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
               <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary' %>
+
+              <%= link_to 'Удалить', event_path(@event),
+                          data: { confirm: "Точно удалить событие?" },
+                          method: :delete,
+                          class: 'btn btn-primary ml-3' %>
             </div>
           <% end %>
         </div>
