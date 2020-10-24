@@ -6,13 +6,13 @@
 
   <% if @user == current_user %>
     <p class="buffer-top">
-    <%= link_to "Редактировать профиль", edit_user_path(@user),
-      class: 'btn btn-default' %>
+    <%= link_to t('links.user.edit'), edit_user_path(@user),
+                class: 'btn btn-link' %>
     </p>
   <% end %>
 
   <div class="row">
-    <div class="col-md-10 col-md-12">
+    <div class="col-md-10 col-sm-12">
       <% if @user.events.any? %>
         <h3>Организовал:</h3>
         <div class="row">

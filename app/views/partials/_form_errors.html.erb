@@ -3,7 +3,7 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <div class="lead mb-2">
-      В вашей форме <%= I18n.t "errors", count: errors.count %>
+      <%= t('errors_info')%> <%= t('errors', count: errors.count) %>
     </div>
 
     <ul>

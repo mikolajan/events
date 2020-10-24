@@ -1,13 +1,13 @@
 <%- if controller_name != 'sessions' %>
-  <div class="my-2"> или <%= link_to "Войти", new_session_path(resource_name) %></div>
+  <div class="my-2"> <%= link_to t('links.sign_in'), new_session_path(resource_name) %></div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <div class="my-2"> или <%= link_to "Зарегистрироваться", new_registration_path(resource_name) %></div>
+  <div class="my-2"> <%= link_to t('links.user.new'), new_registration_path(resource_name) %></div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <div class="my-2"> <%= link_to "Забыли пароль?", new_password_path(resource_name) %> </div>
+  <div class="my-2"> <%= link_to t('links.password.forgot'), new_password_path(resource_name) %> </div>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
