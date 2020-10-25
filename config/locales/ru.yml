@@ -21,10 +21,18 @@ ru:
       destroyed: 'Событие успешно удалено'
     users:
       updated: 'Профиль успешно обновлён!'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
 
   app:
     name: 'Events'
     company: 'Журило Николай и Хороший программист'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
 
   errors:
     one: "%{count} ошибка"
