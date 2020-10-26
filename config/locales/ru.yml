@@ -1,38 +1,39 @@
 ru:
+  app:
+    company: 'Журило Николай и Хороший программист'
+    name: 'Events'
+
   activerecord:
-    models:
-      user: 'Пользователь'
-      event: 'Событие'
     attributes:
+      event:
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+        title: 'Название'
       user:
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
-      event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-  controllers:
-    events:
-      created: 'Событие успешно создано!'
-      updated: 'Событие успешно обновлено!'
-      destroyed: 'Событие успешно удалено'
-    users:
-      updated: 'Профиль успешно обновлён!'
-    comments:
-      destroyed: 'Комментарий удален'
-      created: 'Ваш комментарий добавлен'
-      error: 'Ошибка с комментарием'
-
-  app:
-    name: 'Events'
-    company: 'Журило Николай и Хороший программист'
+    models:
+      event: 'Событие'
+      user: 'Пользователь'
 
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+
+  controllers:
+    comments:
+      created: 'Ваш комментарий добавлен'
+      destroyed: 'Комментарий удален'
+      error: 'Ошибка с комментарием'
+    events:
+      created: 'Событие успешно создано!'
+      destroyed: 'Событие успешно удалено'
+      updated: 'Событие успешно обновлено!'
+    users:
+      updated: 'Профиль успешно обновлён!'
 
   errors:
     one: "%{count} ошибка"
@@ -40,6 +41,17 @@ ru:
     many: "%{count} ошибок"
 
   errors_info: 'В вашей форме '
+
+  headings:
+    event:
+      new: 'Создание события'
+      list: 'События'
+      edit: 'Редактирование события'
+    password:
+      edit: 'Изменить пароль'
+      forgot: 'Забыли пароль?'
+    user:
+      new: 'Регистрация нового пользователя'
 
   labels:
     remember_me: 'Запомнить меня'
@@ -73,15 +85,6 @@ ru:
       edit: 'Редактировать профиль'
       destroy: 'Удалить профиль'
 
-  headings:
-    event:
-      new: 'Создание события'
-      list: 'События'
-      edit: 'Редактирование события'
-    password:
-      edit: 'Изменить пароль'
-      forgot: 'Забыли пароль?'
-    user:
-      new: 'Регистрация нового пользователя'
-
-
+subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
