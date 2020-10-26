@@ -1,4 +1,5 @@
 <span class="subscription">
+
   <% if subscription.user.present? %>
     <%= render partial: 'users/user', object: subscription.user %>
   <% else %>
@@ -9,7 +10,7 @@
             'x',#fa_icon('times'),
             event_subscription_path(subscription.event, subscription),
             method: :delete,
-            data: {confirm: t('.destroy_confirm')}
+            data: {confirm: t('subscriptions.subscription.destroy_confirm')}
         ) %>
   <% end %>
 </span>

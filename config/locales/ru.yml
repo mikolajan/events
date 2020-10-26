@@ -32,6 +32,10 @@ ru:
       created: 'Событие успешно создано!'
       destroyed: 'Событие успешно удалено'
       updated: 'Событие успешно обновлено!'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
     users:
       updated: 'Профиль успешно обновлён!'
 
@@ -85,6 +89,7 @@ ru:
       edit: 'Редактировать профиль'
       destroy: 'Удалить профиль'
 
-subscriptions:
+  subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      block_author_to_subscribe: 'Автор не может подписаться на своё событие'

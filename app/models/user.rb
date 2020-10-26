@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
+  has_many :events
+
   after_commit :link_subscriptions, on: :create
 
   private
