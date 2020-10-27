@@ -1,15 +1,14 @@
 <%= form_for [@event, subscription] do |f| %>
     <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
 
+<%#=  %>
     <% unless user_signed_in? %>
         <div class="form-group">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
+          <%= f.text_field :user_name, class: 'form-control', placeholder: t('links.name.input_name') %>
         </div>
 
         <div class="form-group">
-          <%= f.label :user_email %>
-          <%= f.text_field :user_email, class: 'form-control' %>
+          <%= f.text_field :user_email, class: 'form-control', placeholder: t('links.email.input_email') %>
         </div>
     <% end %>
 
