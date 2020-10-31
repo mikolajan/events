@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_162951) do
+ActiveRecord::Schema.define(version: 2020_10_31_125836) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2020_10_25_162951) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "user_name"
     t.string "user_email"
-    t.integer "event_id", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_id"
+    t.integer "user_id"
     t.index ["event_id"], name: "index_subscriptions_on_event_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
