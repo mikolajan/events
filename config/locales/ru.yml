@@ -5,6 +5,7 @@ ru:
   activerecord:
     attributes:
       event:
+        body: 'Описание'
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
@@ -44,6 +45,11 @@ ru:
       error: 'Подписка/отписка не сработала'
     users:
       updated: 'Профиль успешно обновлён!'
+
+  comments:
+    add_comment: 'Добавить комментарий'
+    input_comment: 'Добавьте комментарий'
+    input_user_name: 'Введите имя'
 
   errors:
     one: "%{count} ошибка"

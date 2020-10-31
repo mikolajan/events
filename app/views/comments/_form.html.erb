@@ -2,18 +2,18 @@
     <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
     <div class="form-group">
-      <%= f.label :body %>
+      <%= f.label :body, t('comments.input_comment') %>
       <%= f.text_area :body, class: 'form-control' %>
     </div>
 
     <% unless user_signed_in? %>
         <div class="form-group">
-          <%= f.label :user_name %>
+          <%= f.label :user_name, t('comments.input_user_name') %>
           <%= f.text_field :user_name, class: 'form-control' %>
         </div>
     <% end %>
 
     <div class="actions">
-      <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+      <%= f.submit t('comments.add_comment'), class: 'btn btn-primary' %>
     </div>
 <% end %>
