@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
     end
 
     def set_comment
-      @comment = @event.comment.find(params[:id])
+      @comment = @event.comments.find(params[:id])
     end
 
     def comment_params
