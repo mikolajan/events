@@ -58,7 +58,8 @@
           </div>
         </div>
       <% end %>
-      <% unless @event.user == current_user %>
+
+      <% unless user_is_author? || user_is_subscribed? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

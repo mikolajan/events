@@ -3,13 +3,6 @@ ru:
     company: 'Журило Николай и Хороший программист'
     name: 'Events'
   activerecord:
-    errors:
-      models:
-        subscription:
-          attributes:
-            base:
-              block_author_to_subscribe: 'Автор не может подписываться на своё событие'
-              user_already_exists: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
     attributes:
       event:
         address: 'Место проведения'
@@ -21,6 +14,13 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+    errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              block_author_to_subscribe: 'Автор не может подписываться на своё событие'
+              user_already_exists: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
     models:
       event: 'Событие'
       user: 'Пользователь'
