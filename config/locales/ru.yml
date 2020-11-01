@@ -19,9 +19,9 @@ ru:
       models:
         subscription:
           attributes:
-            base:
+            user_email:
               block_author_to_subscribe: 'Автор не может подписываться на своё событие'
-              user_already_exists: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
+              user_already_registered: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
     models:
       event: 'Событие'
       user: 'Пользователь'
@@ -40,6 +40,7 @@ ru:
       destroyed: 'Событие успешно удалено'
       updated: 'Событие успешно обновлено!'
     subscriptions:
+      user_email: '1111'
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
@@ -104,3 +105,4 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
