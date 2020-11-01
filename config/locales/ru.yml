@@ -15,6 +15,9 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+      subscription:
+        user_name: 'Имя: '
+        user_email: 'Email: '
     errors:
       models:
         subscription:
