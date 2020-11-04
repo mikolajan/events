@@ -16,6 +16,9 @@ gem 'uglifier'
 gem 'webpacker', '~> 4.0'
 gem 'bootsnap', require: false
 
+gem 'carrierwave'
+gem 'rmagick'
+
 group :production do
   gem 'pg'
 end

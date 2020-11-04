@@ -1,8 +1,7 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
 
-  <%#= image_tag user_avatar(@user) %>
-  <%= image_tag 'https://images.clipartlogo.com/files/istock/previews/9405/94057445-funny-little-dog-showing-that-he-is-good-monochrome-style.jpg' %>
+  <%= image_tag user_avatar(@user), class: "rounded-circle", style: "width: 300px"%>
 
   <% if @user == current_user %>
     <p class="buffer-top">

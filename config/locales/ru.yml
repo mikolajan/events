@@ -11,6 +11,7 @@ ru:
         description: 'Описание'
         title: 'Название'
       user:
+        avatar: 'Аватарка'
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
