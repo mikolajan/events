@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
 
   validate :block_author_to_subscribe, if: -> { user.present? }
-  validate :user_already_registered, unless: -> { user.present? }
+  validate :user_email_registered, unless: -> { user.present? }
 
   def user_name
     user&.name || super
@@ -23,7 +23,7 @@ class Subscription < ApplicationRecord
     errors.add(:user_email, :block_author_to_subscribe) if user_email == event.user.email
   end
 
-  def user_already_registered
-    errors.add(:user_email, :user_already_registered) if User.where(email: user_email).present?
+  def user_email_registered
+    errors.add(:user_email, :user_email_registered) if User.where(email: user_email).present?
   end
 end

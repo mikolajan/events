@@ -24,7 +24,7 @@ ru:
           attributes:
             user_email:
               block_author_to_subscribe: 'Автор не может подписываться на своё событие'
-              user_already_registered: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
+              user_email_registered: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
     models:
       event: 'Событие'
       user: 'Пользователь'
