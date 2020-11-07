@@ -1,5 +1,5 @@
 module SubscriptionsHelper
   def user_is_subscribed?
-    current_user ? @event.subscriptions.map(&:user).include?(current_user) : false
+    @event.subscriptions.map(&:user).include?(current_user)
   end
 end
