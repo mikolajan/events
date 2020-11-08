@@ -1,3 +1,12 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 80px;
+}
+
 .buffer-top {
   margin-top: 20px;
 }
@@ -31,22 +40,10 @@
   padding: 20px 4px 4px;
 }
 
-.wrapper {
-  height: auto;
-  height: 100%;
-}
-
-.wrapper:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.footer-style {
+.footer {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
 }
 
