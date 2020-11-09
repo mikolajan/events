@@ -4,6 +4,9 @@ ru:
     name: 'Events'
   activerecord:
     attributes:
+      comment:
+        user_name: 'Имя: '
+        user_email: 'Email: '
       event:
         body: 'Описание'
         address: 'Место проведения'
@@ -16,6 +19,8 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+      photo:
+        photo: 'Фотография'
       subscription:
         user_name: 'Имя: '
         user_email: 'Email: '
@@ -27,8 +32,12 @@ ru:
               block_author_to_subscribe: 'Автор не может подписываться на своё событие'
               user_email_registered: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
     models:
+      comment: 'Комментарий'
       event: 'Событие'
+      photo: 'Фотография'
+      subscription: 'Подписка'
       user: 'Пользователь'
+
 
   comments:
     comment:
