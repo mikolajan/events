@@ -1,10 +1,10 @@
 <span class="subscription">
-
   <% if subscription.user.present? %>
     <%= render partial: 'users/user', object: subscription.user %>
   <% else %>
     <em><%= subscription.user_name %></em>
   <% end %>
+
   <% if current_user_can_edit?(subscription) %>
     <%= link_to(
             'x',#fa_icon('times'),

@@ -5,22 +5,22 @@ module ApplicationHelper
 
 # Аналогично user_avatar, только возвращает миниатюрную версию
   def user_avatar_thumb(user)
-    user.avatar.file.present? ? user.avatar.thumb.url : asset_path('user.png')
+    user.avatar.file.present? ? user.avatar.thumb.url : asset_pack_path('media/images/user_avatar.jpg')
   end
 
-  # Возвращает адерс рандомной фотки события, если есть хотя бы одна. Или ссылку
+  # Возвращает адрес рандомной фотки события, если есть хотя бы одна. Или ссылку
   # на дефолтную картинку.
   def event_photo(event)
     photos = event.photos.persisted
 
-    photos.any? ? photos.sample.photo.url : asset_path('event.jpg')
+    photos.any? ? photos.sample.photo.url : asset_pack_path('media/images/event.jpg')
   end
 
   # Аналогично event_photo, только возвращает миниатюрную версию
   def event_thumb(event)
     photos = event.photos.persisted
 
-    photos.any? ? photos.sample.photo.thumb.url : asset_path('event_thumb.jpg')
+    photos.any? ? photos.sample.photo.thumb.url : asset_pack_path('media/images/event_thumb.jpg')
   end
 
   def fa_icon(icon_class)
