@@ -4,11 +4,8 @@
 
 <hr/>
 
-<%= t '.event' %>
-<h3><%= @event.title %></h3>
+<h3><%= t '.event' %>: <strong>"<%= @event.title %>"</strong></h3>
+<h4><%= t '.datetime' %> <strong><%= l @event.datetime %></strong></h4>
+<h4><%= t '.owner' %>: <strong><%= @event.user.name %></strong></h4>
 
-<%= t '.datetime' %>
-<h4><%= l @event.datetime %></h4>
-
-<%= t '.owner' %>
-<h4><%= @event.user.name %></h4>
+<p>Информация о событии <%= link_to 'здесь', @event %></p>

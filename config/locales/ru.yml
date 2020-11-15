@@ -1,140 +1,145 @@
 ru:
   app:
-    company: 'Журило Николай и Хороший программист'
-    name: 'Events'
+    company: Журило Николай и Хороший программист
+    name: Events
   activerecord:
     attributes:
       comment:
-        user_name: 'Имя: '
-        user_email: 'Email: '
+        user_name: Имя:
+        user_email: Email:
       event:
-        body: 'Описание'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-        title: 'Название'
+        body: Описание
+        address: Место проведения
+        datetime: Дата и время
+        description: Описание
+        title: Название
       user:
-        avatar: 'Аватарка'
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        avatar: Аватарка
+        email: Email
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
       photo:
-        photo: 'Фотография'
+        photo: Фотография
       subscription:
-        user_name: 'Имя: '
-        user_email: 'Email: '
+        user_name: Имя:
+        user_email: Email:
     errors:
       models:
         subscription:
           attributes:
             user_email:
-              block_author_to_subscribe: 'Автор не может подписываться на своё событие'
-              user_email_registered: 'Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.'
+              block_author_to_subscribe: Автор не может подписываться на своё событие
+              user_email_registered: Пользователь зарегистрирован. Пожалуйста, авторизуйтесь.
     models:
-      comment: 'Комментарий'
-      event: 'Событие'
-      photo: 'Фотография'
-      subscription: 'Подписка'
-      user: 'Пользователь'
-
+      comment: Комментарий
+      event: Событие
+      photo: Фотография
+      subscription: Подписка
+      user: Пользователь
 
   comments:
     comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      destroy_confirm: Вы уверены, что хотите удалить этот комменатрий?
 
   controllers:
     comments:
-      created: 'Ваш комментарий добавлен'
-      destroyed: 'Комментарий удален'
-      error: 'Ошибка с комментарием'
+      created: Ваш комментарий добавлен
+      destroyed: Комментарий удален
+      error: Ошибка с комментарием
     events:
-      created: 'Событие успешно создано!'
-      destroyed: 'Событие успешно удалено'
-      updated: 'Событие успешно обновлено!'
+      created: Событие успешно создано!
+      destroyed: Событие успешно удалено
+      updated: Событие успешно обновлено!
     photos:
-      error: 'Что-то не так с фоткой'
-      created: 'Вы добавили фотографию к событию'
-      destroyed: 'Вы удалили фотку'
+      error: Что-то не так с фоткой
+      created: Вы добавили фотографию к событию
+      destroyed: Вы удалили фотку
     subscriptions:
-      user_email: '1111'
-      created: 'Вы подписаны на это событие'
-      destroyed: 'Участник отписан'
-      error: 'Подписка/отписка не сработала'
+      user_email: E-mail
+      created: Вы подписаны на это событие
+      destroyed: Участник отписан
+      error: Подписка/отписка не сработала
     users:
-      updated: 'Профиль успешно обновлён!'
+      updated: Профиль успешно обновлён!
 
   comments:
-    add_comment: 'Добавить комментарий'
-    input_comment: 'Добавьте комментарий'
-    input_user_name: 'Введите имя'
+    add_comment: Добавить комментарий
+    input_comment: Добавьте комментарий
+    input_user_name: Введите имя
 
   errors:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
 
-  errors_info: 'В вашей форме '
-
-  headings:
-    event:
-      new: 'Создание события'
-      list: 'События'
-      edit: 'Редактирование события'
-    password:
-      edit: 'Изменить пароль'
-      forgot: 'Забыли пароль?'
-    user:
-      new: 'Регистрация нового пользователя'
-
-  labels:
-    remember_me: 'Запомнить меня'
-
-  links:
-    back: 'назад'
-    change: 'Изменить'
-    change_password: 'Изменить пароль'
-    destroy: 'Удалить'
-    profile: 'Профиль'
-    save: 'Сохранить'
-    sign_in: 'Войти'
-    sign_out: 'Выйти'
-    sign_up: 'Зарегистрироваться'
-    email:
-      input_email: 'Введите электронную почту'
-    events:
-      new: 'Создать событие'
-      destroy_confirm: 'Точно удалить событие?'
-    name:
-      input_name: 'Введите имя'
-    password:
-      current: 'Введите текущий пароль'
-      forgot: 'Забыли пароль?'
-      new: 'Введите пароль'
-      new_confirm: 'Подтвердите пароль'
-      reset: 'Отправить инструкции по смене пароля'
-      update: 'Обновить пароль'
-    user:
-      new: 'Зарегистрироваться'
-      edit: 'Редактировать профиль'
-      destroy: 'Удалить профиль'
-
-  subscriptions:
-    subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  errors_info: В вашей форме
 
   event_mailer:
     comment:
-      title: 'Новый комментарий'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
     subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
+    photo:
+      title: Новая фотография
+      author: Автор
+      event: Событие
+      datetime: Дата события
+      owner: Организатор
+
+  headings:
+    event:
+      new: Создание события
+      list: События
+      edit: Редактирование события
+    password:
+      edit: Изменить пароль
+      forgot: Забыли пароль?
+    user:
+      new: Регистрация нового пользователя
+
+  labels:
+    remember_me: Запомнить меня
+
+  links:
+    back: назад
+    change: Изменить
+    change_password: Изменить пароль
+    destroy: Удалить
+    profile: Профиль
+    save: Сохранить
+    sign_in: Войти
+    sign_out: Выйти
+    sign_up: Зарегистрироваться
+    email:
+      input_email: Введите электронную почту
+    events:
+      new: Создать событие
+      destroy_confirm: Точно удалить событие?
+    name:
+      input_name: Введите имя
+    password:
+      current: Введите текущий пароль
+      forgot: Забыли пароль?
+      new: Введите пароль
+      new_confirm: Подтвердите пароль
+      reset: Отправить инструкции по смене пароля
+      update: Обновить пароль
+    user:
+      new: Зарегистрироваться
+      edit: Редактировать профиль
+      destroy: Удалить профиль
+
+  subscriptions:
+    subscription:
+      destroy_confirm: Вы уверены, что хотите удалить эту подписку?

@@ -46,8 +46,8 @@ class CommentsController < ApplicationController
     # XXX: Этот метод может выполняться долго из-за большого числа подписчиков
     # поэтому в реальных приложениях такие вещи надо выносить в background задачи!
   def notify_subscribers(event, comment)
-    # собираем emails подписчиков и автора события в массив и отправляем письмо всем
-    (event.subscriptions.map(&:user_email) + [event.user.email]).each do |mail|
+    # собираем emails подписчиков и автора события в массив без автора комментария и отправляем письмо всем
+    (event.subscriptions.map(&:user_email) + [event.user.email] - [@new_comment&.user&.email]).each do |mail|
       EventMailer.comment(event, comment, mail).deliver_now
     end
   end
