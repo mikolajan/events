@@ -14,4 +14,8 @@ class Event < ApplicationRecord
   def visitors
     [user] + subscribers&.shuffle
   end
+
+  def pincode_valid?(pin_check)
+    pincode == pin_check
+  end
 end

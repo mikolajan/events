@@ -5,13 +5,14 @@ ru:
   activerecord:
     attributes:
       comment:
-        user_name: Имя:
-        user_email: Email:
+        user_name: Имя
+        user_email: Email
       event:
         body: Описание
         address: Место проведения
         datetime: Дата и время
         description: Описание
+        pincode: Пинкод доступа
         title: Название
       user:
         avatar: Аватарка
@@ -22,8 +23,8 @@ ru:
       photo:
         photo: Фотография
       subscription:
-        user_name: Имя:
-        user_email: Email:
+        user_name: Имя
+        user_email: Email
     errors:
       models:
         subscription:
@@ -51,6 +52,7 @@ ru:
       created: Событие успешно создано!
       destroyed: Событие успешно удалено
       updated: Событие успешно обновлено!
+      wrong_pincode: 'Неверный пинкод'
     photos:
       error: Что-то не так с фоткой
       created: Вы добавили фотографию к событию
@@ -100,7 +102,7 @@ ru:
   headings:
     event:
       new: Создание события
-      list: События
+      list: 'События'
       edit: Редактирование события
     password:
       edit: Изменить пароль
@@ -135,6 +137,9 @@ ru:
       new_confirm: Подтвердите пароль
       reset: Отправить инструкции по смене пароля
       update: Обновить пароль
+    pincode:
+      confirm_pincode: Подтвердить пинкод
+      input_pincode: Введите пинкод
     user:
       new: Зарегистрироваться
       edit: Редактировать профиль
