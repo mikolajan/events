@@ -8,6 +8,14 @@ module ApplicationHelper
     user.avatar.file.present? ? user.avatar.thumb.url : asset_pack_path('media/images/user_avatar.jpg')
   end
 
+  def user_is_author?
+    @event.user == current_user
+  end
+
+  def user_is_subscribed?
+   current_user.present? && @event.subscriptions.map(&:user).include?(current_user)
+  end
+
   # Возвращает адрес рандомной фотки события, если есть хотя бы одна. Или ссылку
   # на дефолтную картинку.
   def event_photo(event)
@@ -23,7 +31,7 @@ module ApplicationHelper
     photos.any? ? photos.sample.photo.thumb.url : asset_pack_path('media/images/event_thumb.jpg')
   end
 
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
-  end
+  # def fa_icon(icon_class)
+  #   content_tag 'span', '', class: "fa fa-#{icon_class}"
+  # end
 end

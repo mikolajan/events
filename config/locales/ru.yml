@@ -145,6 +145,10 @@ ru:
       edit: Редактировать профиль
       destroy: Удалить профиль
 
+  photos:
+    add_photo: Добавить фото
+    destroy_confirm: Вы уверены, что хотите удалить это фото
+
   subscriptions:
     subscription:
       destroy_confirm: Вы уверены, что хотите удалить эту подписку?

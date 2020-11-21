@@ -27,32 +27,26 @@
     </div>
   </div>
 
-    <div class="col-8 mx-auto pb-3">
-      <script src="https://api-maps.yandex.ru/2.1?apikey=8e63b96a-56d6-4690-8830-4ecc7a96d6b9&lang=ru_RU" type="text/javascript"></script>
-        <%= javascript_pack_tag 'map' %>
-        <div id="map"
-           data-address="<%= @event.address %>"
-           style="width: 100%; height: 300px; border: 1px solid #FFFFCC" >
-        </div>
-    </div>
-
-
-
   <div class="row">
     <div class="col-md-8">
-
       <div class="event-photos-gallery">
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
 
-      <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+      <% if user_is_author? || user_is_subscribed? %>
+        <div class="event-photo-form mb-3">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      <% end %>
+
+      <div class="border-bottom border-top border-primary">
+        <div class="event-comments ">
+          <%= render partial: 'comments/form',
+          locals: {comment: @new_comment || @event.comments.build} %>
+        </div>
       </div>
 
-      <div class="event-comments buffer-top">
-        <%= render partial: 'comments/form',
-          locals: {comment: @new_comment || @event.comments.build} %>
-
+      <div class="px-2 border-bottom border-primary">
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
             collection: @event.comments.except(@new_comment) %>
@@ -87,6 +81,15 @@
           </div>
         </div>
       <% end %>
+
+      <div class="py-3">
+        <script src="https://api-maps.yandex.ru/2.1?apikey=8e63b96a-56d6-4690-8830-4ecc7a96d6b9&lang=ru_RU" type="text/javascript"></script>
+        <%= javascript_pack_tag 'application' %>
+        <div id="map"
+          data-address="<%= @event.address %>"
+          style="width: 80%; height: 250px; border: 1px solid #FFFFCC" >
+        </div>
+      </div>
     </div>
   </div>
 </div>

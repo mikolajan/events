@@ -6,6 +6,10 @@ import 'bootstrap/dist/js/bootstrap'
 
 import '../styles/application'
 
+import '../scripts/map'
+import '../scripts/ekko-lightbox'
+import '../scripts/gallery_lightbox'
+
 const images = require.context('../images', true)
 
 // Uncomment to copy all static images under ../images to the output folder and reference
