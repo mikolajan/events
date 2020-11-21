@@ -83,7 +83,7 @@
       <% end %>
 
       <div class="py-3">
-        <script src="https://api-maps.yandex.ru/2.1?apikey=<% ENV['YANDEX_MAP_APIKEY'] %>&lang=ru_RU" type="text/javascript"></script>
+        <script src="https://api-maps.yandex.ru/2.1?apikey=<%= ENV['YANDEX_MAP_APIKEY'] %>&lang=ru_RU" type="text/javascript"></script>
         <%= javascript_pack_tag 'application' %>
         <div id="map"
           data-address="<%= @event.address %>"
