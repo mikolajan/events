@@ -1,28 +1,26 @@
 <div class="my-3">
-  <div class="event-info row">
-    <div class="col-8 mx-auto">
-      <%= content_tag 'div', '', class: 'event-background',
-        style: "background-image: url(#{event_photo(@event)})" %>
+  <div class="event-info">
+    <%= content_tag 'div', '', class: 'event-background',
+      style: "background-image: url(#{event_photo(@event)})" %>
 
-      <div class="event-info-inner row">
-        <div class="col-md-6">
-          <div class="event-description">
-            <h1><%= @event.title %></h1>
-            <h3><%= l(@event.datetime, format: :short) %></h3>
-            <p><%= @event.description %></p>
-          </div>
-
-          <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top">
-              <%= link_to t('links.change'), edit_event_path(@event), class: 'btn btn-primary' %>
-
-              <%= link_to t('links.destroy'), event_path(@event),
-                          data: { confirm: t('links.events.destroy_confirm') },
-                          method: :delete,
-                          class: 'btn btn-primary ml-3' %>
-            </div>
-          <% end %>
+    <div class="event-info-inner row">
+      <div class="col-md-6">
+        <div class="event-description">
+          <h1><%= @event.title %></h1>
+          <h3><%= l(@event.datetime, format: :short) %></h3>
+          <p><%= @event.description %></p>
         </div>
+
+        <% if current_user_can_edit?(@event) %>
+          <div class="buffer-top">
+            <%= link_to t('links.change'), edit_event_path(@event), class: 'btn btn-primary' %>
+
+            <%= link_to t('links.destroy'), event_path(@event),
+                        data: { confirm: t('links.events.destroy_confirm') },
+                        method: :delete,
+                        class: 'btn btn-primary ml-3' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -54,7 +52,7 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 ">
       <div class="event-owner">
         <h4>Зовет:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
