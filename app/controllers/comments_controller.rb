@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
   def notify_subscribers(event, comment)
     # собираем emails подписчиков и автора события в массив без автора комментария и отправляем письмо всем
     (event.subscriptions.map(&:user_email) + [event.user.email] - [@new_comment&.user&.email]).each do |mail|
-      # EventMailer.comment(event, comment, mail).deliver_now
+      EventMailer.comment(event, comment, mail).deliver_now
     end
   end
 end
