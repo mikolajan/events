@@ -1,6 +1,5 @@
 class EventMailer < ApplicationMailer
   def subscription(event, subscription)
-    #byebug
     @email = subscription.user_email
     @name = subscription.user_name
     @event = event
