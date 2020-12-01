@@ -31,7 +31,7 @@ module ApplicationHelper
     photos.any? ? photos.sample.photo.thumb.url : asset_pack_path('media/images/event_thumb.jpg')
   end
 
-  # def fa_icon(icon_class)
-  #   content_tag 'span', '', class: "fa fa-#{icon_class}"
-  # end
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
 end
