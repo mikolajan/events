@@ -110,7 +110,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.action_mailer.default_options = {from: ENV['EMAIL_FOR_MAILER']}
+  config.action_mailer.default_options = { from: ENV['EMAIL_FOR_MAILER'] }
 
 # Базовый урл сайта, для генерации правильных ссылок в письмах
   config.action_mailer.default_url_options = { host: 'mikolajan-events.herokuapp.com' }
