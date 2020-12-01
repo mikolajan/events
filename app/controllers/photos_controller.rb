@@ -44,7 +44,9 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, photo)
-    (event.subscribers.map(&:email) + [event.user.email] - [current_user.email]).each do |mail|
+    subscribers_list_for_mailing = event.subscribers.map(&:email) + [event.user.email] - [current_user.email]
+
+    subscribers_list_for_mailing.each do |mail|
       EventMailer.photo(event, photo, mail).deliver_now
     end
   end
